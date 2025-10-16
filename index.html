@@ -4,8 +4,25 @@
     </head>
   <body>
     <div class="container">
-        <h1>Instagram Ear Protector</h1>
-        <input type="range" min="0" max="100" id = "slider">
+        <div class = "header">
+          <h1>Instagram Ear Protector</h1>
+          <img src="logo.png">
+        </div>
+        <div class="controls">
+          <input type="range" min="0" max="100" id = "slider">
+          <div class="percentageDisplay">
+            <div>0%</div>
+            <div id="current"></div>
+            <div>100%</div>
+          </div>
+          <div class="videoDisplay">
+            <video autoplay="autoplay" loop>
+                <source src="gameplay.mp4"/>
+            </video>
+            <div class="gameplayText">
+              Gameplay to avoid withdrawal from scrolling
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
