@@ -63,13 +63,15 @@ body {
 .videoDisplay video {
   margin-left: 10%;
   width: 80%;
+  border-radius: 8px;
 }
 
 .gameplayText {
+  margin-top: 5px;
   width: 80%;
   margin-left: 10%;
   color: white !important;
   text-shadow: 0 0 10px white;
   text-align: center;
-  font-size: 12;
+  font-size: 14;
 }
