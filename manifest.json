@@ -5,6 +5,14 @@
   "manifest_version": 3,
   "action": {
     "default_popup": "index.html",
-    "default_icon": "icons.png"
-  }
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.instagram.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["tabs", "storage"],
+  "host_permissions": ["https://www.instagram.com/*"]
 }
