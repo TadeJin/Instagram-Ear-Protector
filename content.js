@@ -18,7 +18,7 @@ setVolume();
 if (!isStarted) {
   isStarted = setInterval(() => {
     setVolume();
-  }, 3000);
+  }, 500);
 }
 
 chrome.runtime.onMessage.addListener((msg, _sender, _sendResponse) => {
