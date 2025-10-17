@@ -12,6 +12,15 @@ async function setVolume() {
   });
 }
 
+
+chrome.runtime.onMessage.addListener((msg, _sender, _sendResponse) => {
+  if (msg.sender === "IGEarProtector") {
+    chrome.storage.local.set({ volume: msg.volume });
+    setVolume();
+  }
+});
+
+
 let isStarted = null;
 setVolume();
 
@@ -20,10 +29,3 @@ if (!isStarted) {
     setVolume();
   }, 500);
 }
-
-chrome.runtime.onMessage.addListener((msg, _sender, _sendResponse) => {
-  if (msg.sender === "IGEarProtector") {
-    chrome.storage.local.set({ volume: msg.volume });
-    setVolume();
-  }
-});
