@@ -46,6 +46,47 @@ body {
   cursor: grab;
 }
 
+.controls .muteControls {
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
+  width: 80%;
+  margin-top: 10px;
+}
+
+.controls .muteControls div:first-of-type {
+  height: 20px;
+  font-size: 13;
+  color: white;
+  text-shadow: 0 0 10px white;
+}
+
+.controls .muteControls .muteCheckbox {
+  width: 13px;
+  height: 13px;
+  margin-left: 7px;
+  box-shadow: 0 0 5px 2px white;
+  background: rgba(255, 255, 255, 0.911);
+}
+
+.controls .muteControls .muteCheckbox:has(input:checked) {
+  background: blue;
+}
+
+.controls .muteControls .muteCheckbox input:checked {
+  box-shadow: 0 0 5px 2px blue;
+  appearance: auto;
+}
+
+.muteCheckbox input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  appearance: none;
+}
+
 .dragging {
   cursor: grabbing !important;
 }
@@ -57,7 +98,7 @@ body {
 
 .videoDisplay {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .videoDisplay video {

@@ -7,6 +7,7 @@ async function setVolume() {
     if (videos.length > 0) {
       videos.forEach((video) => {
         video.volume = volume;
+        video.muted = false;
       });
     }
   });
