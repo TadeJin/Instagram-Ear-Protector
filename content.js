@@ -1,5 +1,5 @@
 async function setVolume() {
-  await chrome.storage.local.get({ volume: 100 }, (result) => {
+  chrome.storage.local.get({ volume: 100, unmute: false }, (result) => {
     const data = result.volume;
     const volume = !data ? 1 : Number(data) / 100;
     const videos = document.querySelectorAll("video");
@@ -7,20 +7,13 @@ async function setVolume() {
     if (videos.length > 0) {
       videos.forEach((video) => {
         video.volume = volume;
-        video.muted = false;
+        if (result.unmute && result) {
+          video.muted = false;
+        }
       });
     }
   });
 }
-
-
-chrome.runtime.onMessage.addListener((msg, _sender, _sendResponse) => {
-  if (msg.sender === "IGEarProtector") {
-    chrome.storage.local.set({ volume: msg.volume });
-    setVolume();
-  }
-});
-
 
 let isStarted = null;
 setVolume();
